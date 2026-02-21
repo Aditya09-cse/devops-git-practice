@@ -1,42 +1,64 @@
 ## Git Cheatsheet
 
-- to check git version
-  ` git --version `
+- Check installed Git version  
+  `git --version`
 
-- to set global author on you system
- ` git config --global user.name <"user-name">`
+- Set global username (for all repositories)  
+  `git config --global user.name "your-name"`
 
-- to set global email on your system
- ` git config --global user.email <"user-email">`
+- Set global email (for all repositories)  
+  `git config --global user.email "your-email"`
 
-- to initilize empty git repository
- ` git init`
+- Initialize a new empty Git repository  
+  `git init`
 
-- to check status of your git repo
- ` git status`
+- Check current repository status  
+  `git status`
 
-- for untracke to staged
- ` git add <file-name`
-- for untracke to staged all files in one command
- ` git add . `
+- Add specific file from untracked → staged  
+  `git add <file-name>`
 
-- for stage to untrack
- ` git rm --cached <file name>`
+- Add all files from untracked → staged  
+  `git add .`
 
-- for staged to track
- ` git commit -m "< message you want to print >"`
+- Remove file from staging area (staged → untracked)  
+  `git rm --cached <file-name>`
 
-- to see logs , who made what changes in which branch at what time in which branch etc ..
- ` git log `
+- Commit staged changes (staged → tracked with history)  
+  `git commit -m "your commit message"`
 
-- to see log in oneline
- ` git log --oneline `
+- View full commit history  
+  `git log`
 
-- to restored tracked files deleted from file/repo/folder
- ` git restore <file>`
+- View commit history in one line format  
+  `git log --oneline`
 
-` ./git folder ` 
- ```
-- It is most important folder of git repo it contains all information of your repo 
-- If you delete .git folder your directory is just normal directory
-```
+- Restore deleted or modified tracked file  
+  `git restore <file-name>`
+
+---
+
+## 📁 .git Folder
+
+- The `.git` folder is the most important folder in a Git repository.
+- It stores all commits, branches, configuration, and history.
+- If you delete the `.git` folder, your project becomes a normal directory (no version control).
+
+## Advance Git
+- Merge one branch into another branch  
+  → `git merge <branch-name>`
+
+- Replay commits of current branch on top of another branch (linear history)  
+  → `git rebase <branch-name>`
+
+- Temporarily save uncommitted work (work in progress)  
+  → `git stash`
+
+- Apply stashed changes and remove them from stash list  
+  → `git stash pop`
+
+- Apply a specific commit from another branch to current branch  
+  → `git cherry-pick <commit-id>`
+
+- Combine all commits of a branch into one commit before merging  
+  → `git merge --squash <branch-name>`

@@ -62,3 +62,24 @@
 
 - Combine all commits of a branch into one commit before merging  
   → `git merge --squash <branch-name>`
+
+ ## Git Reset
+
+- `git reset --soft` → Moves HEAD, keeps changes staged.
+- `git reset --mixed` → Moves HEAD, unstages changes but keeps them in working directory.
+- `git reset --hard` → Moves HEAD and permanently deletes all staged & working changes. ⚠️
+
+## Git Revert
+
+- `git revert <commit>` → Creates a new commit that undoes a previous commit without deleting history.
+Safe for shared/production branches.
+
+## Reset vs Revert
+- reset → Rewrites history (use locally).
+- revert → Preserves history (use in shared branches).
+
+## Branching Strategies
+
+- GitFlow → Structured branching (`main`, `develop`, `feature, release`, `hotfix`) for scheduled releases.
+- GitHub Flow → Single main + feature branches, merge via PR, deploy continuously.
+- Trunk-Based Development → Short-lived branches or direct commits to main for fast delivery.

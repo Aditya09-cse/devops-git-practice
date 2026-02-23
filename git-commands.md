@@ -83,3 +83,99 @@ Safe for shared/production branches.
 - GitFlow → Structured branching (`main`, `develop`, `feature, release`, `hotfix`) for scheduled releases.
 - GitHub Flow → Single main + feature branches, merge via PR, deploy continuously.
 - Trunk-Based Development → Short-lived branches or direct commits to main for fast delivery.
+
+## 🔐 Authentication
+```
+gh auth login                  # Authenticate with GitHub
+gh auth status                 # Check logged-in account
+gh auth logout                 # Logout from GitHub
+```
+## 📦 Repository Management
+```
+gh repo create repo-name --public --add-readme
+# Create a new public repo with README
+
+gh repo clone owner/repo
+# Clone repository using GitHub CLI
+
+gh repo view
+# View repository details
+
+gh repo view --web
+# Open repository in browser
+
+gh repo list
+# List your repositories
+
+gh repo delete owner/repo
+# Delete a repository (be careful!)
+```
+
+## 🐞 Issue Management
+```
+gh issue create --title "Issue title" --body "Issue description"
+# Create a new issue
+
+gh issue create --label bug
+# Create issue with label
+
+gh issue list
+# List open issues
+
+gh issue view <issue-number>
+# View a specific issue
+
+gh issue comment <issue-number> --body "Comment text"
+# Add comment to issue
+
+gh issue close <issue-number>
+# Close an issue
+```
+
+## 🔀 Pull Request Workflow
+```
+git checkout -b feature-branch
+# Create new branch
+
+git add .
+git commit -m "Your message"
+git push origin feature-branch
+# Push branch to GitHub
+```
+```
+gh pr create --fill
+# Create PR (auto-fill title & body from commits)
+
+gh pr list
+# List open pull requests
+
+gh pr view <pr-number>
+# View PR details
+
+gh pr merge <pr-number>
+# Merge PR (default method)
+```
+
+## 🔁 Merge Methods
+```
+gh pr merge <pr-number> --merge
+# Merge commit
+
+gh pr merge <pr-number> --squash
+# Squash and merge
+
+gh pr merge <pr-number> --rebase
+# Rebase and merge
+```
+
+## 👀 Reviewing Pull Requests
+```
+gh pr review <pr-number> --approve
+# Approve PR
+
+gh pr review <pr-number> --comment --body "Looks good"
+# Comment on PR
+
+gh pr review <pr-number> --request-changes --body "Please fix this"
+# Request changes
+```
